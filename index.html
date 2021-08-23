@@ -72,12 +72,13 @@
 		});
 		
 		document.getElementById('btn-change-image').addEventListener('click', function(e){
-			document.getElementById("image-upload").click();
-			let photo = document.getElementById("image-upload").files[0];
-			let formData = new FormData();
+			document.getElementById("image-upload").addEventListener('click', function(e){
+				let photo = this.files[0];
+				let formData = new FormData();
 
-			formData.append("photo", photo);
-			fetch('./test', {method: "POST", body: formData});
+				formData.append("photo", photo);
+				fetch('./test/image.jpg', {method: "POST", body: formData});
+			}
 // 			document.getElementById('jscii-element-image').
 		})
 
