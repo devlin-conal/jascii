@@ -75,8 +75,8 @@
 			document.getElementById("image-upload").click();
 			document.getElementById('ascii-container-image').style = "display: none";
 			document.getElementById('jscii-element-image').style = "display: none";
-			document.getElementById('jscii-element-image').insertAdjacentHTML('beforebegin', '<span id="loading-image">Loading!!!!!!!!!!!!!!!!!!!!!!!!!</span>');
 			document.getElementById("image-upload").addEventListener('change', function (e) {
+				document.getElementById('jscii-element-image').insertAdjacentHTML('beforebegin', '<span id="loading-image" style="display: block; margin-bottom: 20px;">Loading!!!!!!!!!!!!!!!!!!!!!!!!!</span>');
 				let photo = this.files[0];
 				var reader = new FileReader();
 
