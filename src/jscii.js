@@ -60,7 +60,8 @@
 				}
 				navigator.getUserMedia({video: true, audio: false}, function(localMediaStream){
 					self.mediaStream = localMediaStream;
-					el.src = (window.URL || window.webkitURL).createObjectURL(localMediaStream);
+// 					el.src = (window.URL || window.webkitURL).createObjectURL(localMediaStream);
+					el.srcObject = localMediaStream;
 				}, logError);
 			}
 			el.addEventListener('loadeddata', function() { self.play(); });
