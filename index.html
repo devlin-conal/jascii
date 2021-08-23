@@ -27,7 +27,7 @@
 	<div class="container">
 		<h2>Image to ASCII string</h2>
 		<div class="section clearfix">
-			<img width="150" id="jscii-element-image" src="test/thu.png">
+			<img width="150" id="jscii-element-image" src="test/image.jpg">
 			<pre id="ascii-container-image"></pre>
 			<button id="btn-change-image">Thay đổi ảnh</button>
 			<input type="file" id="image-upload" hidden/>
@@ -71,15 +71,26 @@
 			}
 		});
 		
-		document.getElementById('btn-change-image').addEventListener('click', function(e){
-			document.getElementById("image-upload").addEventListener('click', function(e){
+		document.getElementById('btn-change-image').addEventListener('click', function (e) {
+			document.getElementById("image-upload").click();
+			document.getElementById('ascii-container-image').style = "display: none";
+			document.getElementById('jscii-element-image').style = "display: none";
+			document.getElementById('jscii-element-image').insertAdjacentHTML('beforebegin', '<span id="loading-image">Loading!!!!!!!!!!!!!!!!!!!!!!!!!</span>');
+			document.getElementById("image-upload").addEventListener('change', function (e) {
 				let photo = this.files[0];
-				let formData = new FormData();
+				var reader = new FileReader();
 
-				formData.append("photo", photo);
-				fetch('./test/image.jpg', {method: "POST", body: formData});
-			}
-// 			document.getElementById('jscii-element-image').
+				reader.onload = function (e) {
+					document.getElementById('jscii-element-image').src = e.target.result;
+					imgJscii.el.addEventListener('load', function () {
+						document.getElementById('loading-image').remove();
+						document.getElementById('jscii-element-image').removeAttribute("style");
+						document.getElementById('ascii-container-image').removeAttribute("style");
+						imgJscii.render();
+					})
+				}
+				reader.readAsDataURL(photo);
+			})
 		})
 
 		// example using webrtc media stream in video element
