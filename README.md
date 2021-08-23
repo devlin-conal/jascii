@@ -6,7 +6,7 @@ Jscii is an image/stream to ASCII conversion library. It can convert a single im
 
 ### Examples ###
 
-Go to the [project site](http://enotionz.github.com/jscii/) for demo
+Go to the [project site]() for demo
 
 ### License ###
 
