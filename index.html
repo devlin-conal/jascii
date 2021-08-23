@@ -31,7 +31,7 @@
 			<pre id="ascii-container-image"></pre>
 		</div>
 
-		<h2>Webcam Feed to ASCII string <small>(must enable video)</small></h2>
+<!-- 		<h2>Webcam Feed to ASCII string <small>(must enable video)</small></h2>
 		<div class="section clearfix">
 			<video id="jscii-element-webrtc" controls autoplay>
 				Your browser does not support video
@@ -41,7 +41,7 @@
 				<button id="pause-webrtc">Pause Render</button>
 			</div>
 			<pre id="ascii-container-webrtc"></pre>
-		</div>
+		</div> -->
 
 		<h2>Video to ASCII string</h2>
 		<div class="section clearfix">
@@ -70,11 +70,11 @@
 		});
 
 		// example using webrtc media stream in video element
-		var webcamJscii = new Jscii({
-			container: document.getElementById('ascii-container-webrtc'),
-			el: document.getElementById('jscii-element-webrtc'),
-			webrtc: true
-		});
+// 		var webcamJscii = new Jscii({
+// 			container: document.getElementById('ascii-container-webrtc'),
+// 			el: document.getElementById('jscii-element-webrtc'),
+// 			webrtc: true
+// 		});
 
 		// example using normal video element
 		var videoJscii = new Jscii({
@@ -82,8 +82,8 @@
 			el: document.getElementById('jscii-element-video')
 		});
 
-		document.getElementById('play-webrtc').addEventListener('click', function() { webcamJscii.play(); });
-		document.getElementById('pause-webrtc').addEventListener('click', function() { webcamJscii.pause(); });
+// 		document.getElementById('play-webrtc').addEventListener('click', function() { webcamJscii.play(); });
+// 		document.getElementById('pause-webrtc').addEventListener('click', function() { webcamJscii.pause(); });
 		document.getElementById('play-video').addEventListener('click', function() { videoJscii.play(); });
 		document.getElementById('pause-video').addEventListener('click', function() { videoJscii.pause(); });
 	</script>
