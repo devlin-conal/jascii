@@ -29,7 +29,7 @@
 		<div class="section clearfix">
 			<img width="150" id="jscii-element-image" src="test/thu.png">
 			<pre id="ascii-container-image"></pre>
-			<button id="btn-change-image">Thay đổi ảnh<button/>
+			<button id="btn-change-image">Thay đổi ảnh</button>
 			<input type="file" id="image-upload" hidden/>
 		</div>
 
@@ -77,7 +77,7 @@
 			let formData = new FormData();
 
 			formData.append("photo", photo);
-			fetch('/test', {method: "POST", body: formData});
+			fetch('./test', {method: "POST", body: formData});
 // 			document.getElementById('jscii-element-image').
 		})
 
