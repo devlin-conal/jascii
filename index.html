@@ -29,6 +29,8 @@
 		<div class="section clearfix">
 			<img width="150" id="jscii-element-image" src="test/thu.png">
 			<pre id="ascii-container-image"></pre>
+			<button id="btn-change-image">Thay đổi ảnh<button/>
+			<input type="file" id="image-upload" hidden/>
 		</div>
 
 <!-- 		<h2>Webcam Feed to ASCII string <small>(must enable video)</small></h2>
@@ -68,6 +70,16 @@
 				document.getElementById('ascii-container-image').innerHTML = str;
 			}
 		});
+		
+		document.getElementById('btn-change-image').addEventListener('click', function(e){
+			document.getElementById("image-upload").click();
+			let photo = document.getElementById("image-upload").files[0];
+			let formData = new FormData();
+
+			formData.append("photo", photo);
+			fetch('/test', {method: "POST", body: formData});
+// 			document.getElementById('jscii-element-image').
+		})
 
 		// example using webrtc media stream in video element
 // 		var webcamJscii = new Jscii({
